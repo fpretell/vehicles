@@ -1,24 +1,62 @@
-# README
+# fpretell/vehicles
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Descripción
 
-Things you may want to cover:
+Esta es una aplicación que proporciona una api para geolocalización de vehículos desarrollado en Ruby on Rails.
 
-* Ruby version
+Los puntos de referencia  recibidos a traves de esta API son procesados con un Framework de Procesamiento de Tareas en background.
 
-* System dependencies
 
-* Configuration
+## Requirements
 
-* Database creation
+Este proyecto actualmente trabaja con :
 
-* Database initialization
+* Ruby 2.6.3
+* Rails 5.2.3
+* Sqlite3
+* Active Job
+* Delayed Job
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Instalación.
 
-* Deployment instructions
+  1. Clonar el proyecto
+      ```
+      git clone https://github.com/fpretell/prueba.git
+      ```
+  2. Instalar Gemfile
+      ```
+      bundle install
+      ```
+  3. Crear databases (create y migrate)
+      ```
+      rake db:create
+      rake db:migrate
+      ```
+  4. Iniciar worker/s
+      ```
+      bin/delayed_job start
+      ```
+  5. Iniciar Server Rails
+      ```
+      bin/delayed_job start
+      ```
 
-* ...
+## End-points
+
+  * /api/v1/gps
+
+    Permite enviar puntos de referencia GPS asociados a un vehículo. El formato requerido es:
+
+    ```
+    {
+      "latitude": 20.23,
+      "longitude": -0.56,
+      "sent_at": 2016-06-02 20:45:00",
+      "vehicle_identifier": "HA-3452"
+    }
+    ```
+
+  * /show
+
+    Permite visualizar un mapa con las ubicaciones mas recientes de los vehiculos.
