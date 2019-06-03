@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :ubications
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'show' , to: 'maps#show'
+  post 'api/v1/gps' , to: 'ubications#create'
 end

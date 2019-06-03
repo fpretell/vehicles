@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map of vehicles</title>
+    <%= csrf_meta_tags %>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+     </style>
+     <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKIznCaixKio7V1yp2DI2Y8eJroc1Qlbw&callback=initMap">
+     </script>
+  </head>
+
+  <body>
+    <h1>Map of vehicles</h1>
+    <%= yield %>
+  </body>
+</html>

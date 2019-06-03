@@ -1,0 +1,26 @@
+<div id="map"></div>
+<script>
+
+  // variables iniciales desde controller
+  var center = <%= @center %>
+  var markers = <%= @ubicationsFilter %>
+
+  function initMap(){
+
+    // creamos map con center
+    var sgo = {lat: center.lat, lng: center.lng};
+    var map = new google.maps.Map(
+      document.getElementById('map'), {
+        zoom: <%= @zoom %>,
+        center: {lat: center.lat, lng: center.lng}
+      }
+    );
+
+    // agregamos markers
+    markers.forEach( function(v, i) {
+      var myLatLng = new google.maps.LatLng(v.latitude, v.longitude);
+      var marker = new google.maps.Marker({ position: myLatLng, map: map, title: v.vehicle_identifier});
+    });
+
+  }
+</script>
