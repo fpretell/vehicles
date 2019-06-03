@@ -7,7 +7,7 @@ Esta es una aplicación que proporciona una api para geolocalización de vehícu
 Los puntos de referencia  recibidos a traves de esta API son procesados con un Framework de Procesamiento de Tareas en background.
 
 
-## Requirements
+## Requerimientos
 
 Este proyecto actualmente trabaja con :
 
@@ -18,7 +18,7 @@ Este proyecto actualmente trabaja con :
 * Delayed Job
 
 
-## Instalación.
+## Instalación
 
   1. Clonar el proyecto
       ```
@@ -44,7 +44,7 @@ Este proyecto actualmente trabaja con :
 
 ## End-points
 
-  * /api/v1/gps
+  * ```POST /api/v1/gps```
 
     Permite enviar puntos de referencia GPS asociados a un vehículo. El formato requerido es:
 
@@ -57,6 +57,6 @@ Este proyecto actualmente trabaja con :
     }
     ```
 
-  * /show
+  * ```GET /show```
 
     Permite visualizar un mapa con las ubicaciones mas recientes de los vehiculos.
