@@ -39,7 +39,7 @@ Este proyecto actualmente trabaja con :
       ```
   5. Iniciar Server Rails
       ```
-      bin/delayed_job start
+      rails server
       ```
 
 ## End-points
